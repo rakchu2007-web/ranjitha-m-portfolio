@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { ArrowDown, Mail, Copy, Check, ExternalLink, Code, Sparkles, GraduationCap, MapPin, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface HeroProps {
-  onOpenResume: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
+export const Hero: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
@@ -74,14 +70,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 Contact Me
               </button>
 
-              <button
-                onClick={onOpenResume}
+              <a
+                href="/Ranjitha_M_Professional_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2.5 text-sm font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors inline-flex items-center gap-1.5 whitespace-nowrap shrink-0"
-                title="View verified academic profile & PDF placeholder"
+                title="View or download Ranjitha M's Resume"
               >
                 <FileText className="w-4 h-4" />
-                <span>Resume (Placeholder)</span>
-              </button>
+                <span>Resume</span>
+              </a>
             </div>
 
             {/* Quick Contact & Profile Strip */}

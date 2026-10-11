@@ -2,11 +2,7 @@ import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface FooterProps {
-  onOpenResume: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
+export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -32,12 +28,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
             <a href="#projects" className="hover:text-purple-700 transition-colors">Projects</a>
             <a href="#achievements" className="hover:text-purple-700 transition-colors">Achievements</a>
             <a href="#certifications" className="hover:text-purple-700 transition-colors">Certifications</a>
-            <button
-              onClick={onOpenResume}
+            <a
+              href="/Ranjitha_M_Professional_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-purple-700 hover:text-purple-900 font-medium transition-colors"
             >
-              Resume (PDF Placeholder)
-            </button>
+              Resume
+            </a>
           </div>
 
           {/* Socials & Back to Top */}

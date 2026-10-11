@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, FileText } from 'lucide-react';
 
-interface NavbarProps {
-  onOpenResume: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -94,13 +90,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
         {/* Zone 3: 1 primary action */}
         <div className="flex items-center gap-3 shrink-0">
-          <button
-            onClick={onOpenResume}
+          <a
+            href="/Ranjitha_M_Professional_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200/80 rounded-lg hover:bg-purple-100 hover:border-purple-300 transition-colors whitespace-nowrap shrink-0"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>
-          </button>
+          </a>
 
           {/* Mobile menu toggle */}
           <button
@@ -135,16 +133,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               </a>
             ))}
             <div className="pt-2 border-t border-slate-100">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
+              <a
+                href="/Ranjitha_M_Professional_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-left py-1 text-sm font-medium text-purple-700 flex items-center gap-2"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Resume Placeholder</span>
-              </button>
+                <span>Resume</span>
+              </a>
             </div>
           </nav>
         </div>
